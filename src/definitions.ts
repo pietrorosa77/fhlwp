@@ -1,22 +1,17 @@
+import { ButtonProps } from "@fluentui/react-components";
+
 // tslint:disable
 export const START_NODE_TYPE = 'start';
 export const DEFAULT_NODE_PORT = 'default';
 
-export interface IDmbtChoiceProps {
-  value?: any;
-  icon?: string;
-  rounded?: boolean;
-  outlined?: boolean;
-  className?: string;
-  severity?:
-    | 'danger'
-    | 'secondary'
-    | 'success'
-    | 'info'
-    | 'warning'
-    | undefined;
-  badge?: string;
-  badgeClassName?: string;
+export type IDmbtChoiceProps =  ButtonProps & {
+  iconId?: string;
+}
+
+export type IDmbtMultichoiceProps = IDmbtChoiceProps & {
+  min?: number;
+  max?: number;
+  validationErrorMessage?: string;
 }
 
 export interface IDmbtNodeProps {
@@ -31,10 +26,9 @@ export interface IDmbtNodeProps {
 
 export interface IDmbtQuestionProps extends IDmbtNodeProps {
   pattern?: RegExp;
-  sendIcon?: string;
   sendClassName?: string;
-  leftAddons?: string[];
-  rightAddons?: string[];
+  description?: string;
+  multiline?: boolean;
 }
 
 export interface IDmbtJSSnippetProps extends IDmbtNodeProps {
@@ -47,10 +41,7 @@ export interface IDmbtExternalComponentProps extends IDmbtNodeProps {
   tag: string;
 }
 
-export interface IDmbtMultichoiceProps extends IDmbtNodeProps {
-  min?: number;
-  max?: number;
-}
+
 
 export interface IDmbtPort {
   id: string;

@@ -7,19 +7,14 @@ import {
   IDmbtState,
   NodeTypes
 } from '../../definitions';
-// import { SingleChoice } from './SingleChoice';
-// import { MultipleChoice } from './MultipleChoice';
-// import { Question } from './Question';
-// import { NumericQuestion } from './NumericQuestion';
-// import { DateTimeQuestion } from './DateTimeQuestion';
-// import { LongTextQuestion } from './LongTextQuestion';
-// import { MaskQuestion } from './MaskQuestion';
-// import { ColorQuestion } from './ColorQuestion';
+import { Question } from './interactions/Question';
 import { LoadingStep } from './LoadingStep';
-// import { JSSnippet } from './JavascriptSnippet';
 // import { ExternalComponent } from './ExternalComponent';
 // import { TagsQuestion } from './TagsQuestion';
 import * as React from 'react';
+import { ButtonsInteraction } from './interactions/Buttons';
+import { MessageBar, MessageBarBody } from '@fluentui/react-components';
+import { JSSnippet } from './interactions/JavascriptSnippet';
 
 interface InteractionWrapperProperties {
   state: IDmbtState;
@@ -65,11 +60,11 @@ const InteractionsMap = new Map<
   [NodeTypes.DATE, mockInteraction],
   [NodeTypes.TIME, mockInteraction],
   [NodeTypes.LONGTEXT, mockInteraction],
-  [NodeTypes.QUESTION, mockInteraction],
+  [NodeTypes.QUESTION, Question],
   [NodeTypes.MASK, mockInteraction],
-  [NodeTypes.BUTTONS, mockInteraction],
+  [NodeTypes.BUTTONS, ButtonsInteraction],
   [NodeTypes.MULTIBUTTONS, mockInteraction],
-  [NodeTypes.CODE, mockInteraction]
+  [NodeTypes.CODE, JSSnippet]
 ]);
 
 export const InnerInteraction = (props: InteractionWrapperProperties) => {
@@ -95,7 +90,7 @@ export const InnerInteraction = (props: InteractionWrapperProperties) => {
   }, []);
 
   const onValidation = (valid: boolean, message: string) => {
-    setValidationMessage(valid ? '' : message);
+    setValidationMessage(valid ? '' : message || 'Please provide a valid answer');
   };
 
   if (!InteractionControl) {
@@ -120,9 +115,11 @@ export const InnerInteraction = (props: InteractionWrapperProperties) => {
         onValidation={onValidation}
       />
       {validationMessage && (
-        <div>
-          <small className="text-red-600">{validationMessage}</small>
-        </div>
+         <MessageBar intent='warning' className='mt-2'>
+          <MessageBarBody>
+            {validationMessage}
+          </MessageBarBody>
+       </MessageBar>
       )}
     </div>
   );

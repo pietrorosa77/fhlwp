@@ -3,9 +3,16 @@ import { useEffect, useState } from "react";
 export const useDynamicScript = (args: {
     nonce?: string;
     url: string;
+    block?: boolean
   }) => {
     const [ready, setReady] = useState(false);
     const [failed, setFailed] = useState(false);
+    if(args.block) {
+      return {
+        ready: false,
+        error: false
+      }
+    }
   
     useEffect(() => {
       if (!args.url) {

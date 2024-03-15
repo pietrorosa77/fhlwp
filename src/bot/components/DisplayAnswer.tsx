@@ -37,6 +37,10 @@ export const DisplayMessage = (props: IDmbtMessage) => {
   return HtmlRenderer(props.content);
 };
 
+export const DisplayPassword = (props: IDmbtMessage) => {
+  return <div className='dmbt-password-answer'>*********</div>
+};
+
 export const ArrayOutput = (props: IDmbtMessage) => {
   const output = props.output.value.map((entry: any, i: number) => (
     <div key={i}>{HtmlRenderer(entry)}</div>
@@ -46,11 +50,7 @@ export const ArrayOutput = (props: IDmbtMessage) => {
 
 export const ColorOutput = (props: IDmbtMessage) => {
   return (
-    <div style={{ backgroundColor: props.output.value }} />
-    //   disabled
-    //   value={props.output.value}
-    //   format={(props.meta.format as any) || 'hex'}
-    // />
+    <div style={{ backgroundColor: props.output.value, width:'50px', height: '50px', borderRadius:'50%' }} />
   );
 };
 

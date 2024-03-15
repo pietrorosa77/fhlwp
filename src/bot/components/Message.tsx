@@ -7,7 +7,8 @@ import {
   ColorOutput,
   DateTimeDisplay,
   DefaultOutput,
-  DisplayMessage
+  DisplayMessage,
+  DisplayPassword
 } from './DisplayAnswer';
 import * as React from 'react';
 
@@ -31,7 +32,8 @@ const DisplayMessageMap = new Map<
   ['json', DefaultOutput],
   ['text', DefaultOutput],
   ['message', DisplayMessage],
-  ['error', DefaultOutput]
+  ['error', DefaultOutput],
+  ['password', DisplayPassword]
 ]);
 
 export const MessageContainer = (props: {

@@ -538,6 +538,20 @@
   .dumbot-trigger-image {
     height: var(--dmbt-trigger-size);
   }
+
+  .dmbt-button-danger {
+    color: red !important;
+    fill: red !important;
+  }
+
+  .dmbt-invalid {
+    border: 1px solid red !important;
+  }
+
+  .from-me .fui-Avatar__image {
+    background-color: var(--bot-primary-color);
+  }
+
   
 
   

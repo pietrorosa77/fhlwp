@@ -67,6 +67,53 @@ const MessageNode = {
   }
 };
 
+const JavascriptNode = {
+  id: 'JavascriptNode',
+  type: NodeTypes.CODE,
+  user: true,
+  content: 'Run some JS code',
+  position: {
+    x: 0,
+    y: 0
+  },
+  title: 'JS code',
+  output: {
+    id: 'dumbotSnippet_wGmwpsb2Ml',
+    type: 'code'
+  },
+  silent: true,
+  preventEdit: ["silent","output"],
+  properties: {
+    code:'const callApi = async (label) => {\n    //onCallHost will call a function passed as a property into the bot instance if defined. You can cal an api\n    // from the host and provide data out\n    const data = await SnippetContext.onCallHost(label, SnippetContext.variables);\n    return data;\n  }\n\n  // you can use await \n  const res = await callApi(\"testlabel\");\n  console.log(\"RESPONSEEEEE\", res)\n  // set variables on the Bot\n  SnippetContext.onSetVariable(\"aaa\", res);\n  // read variables from the bot\n  console.log(\"Available variables\",SnippetContext.variables);\n  console.log(\"Available ports\",SnippetContext.ports);\n  // proceed with the flow on port default\n return SnippetContext.ports.exit2;'
+  },
+  ports: {
+    default: {
+      id: 'default',
+      text: 'default',
+      index: 1,
+      properties: {}
+    },
+    exit1: {
+      id: 'exit1',
+      text: 'exit 1',
+      index: 2,
+      properties: { value: 'exit 1' }
+    },
+    exit2: {
+      id: 'exit2',
+      text: 'exit 2',
+      index: 3,
+      properties: { value: 'exit 2' }
+    },
+    exit3: {
+      id: 'exit3',
+      text: 'exit 3',
+      index: 4,
+      properties: { value: 'exit 3' }
+    }
+  }
+};
+
 const QuestionNode = {
   id: 'QuestionNode',
   type: NodeTypes.QUESTION,
@@ -115,7 +162,6 @@ const ButtonsNode = {
     type: 'text'
   },
   properties: {
-    direction: 'row',
     displayAs: 'message',
     allowMultiple: false
   },
@@ -167,6 +213,12 @@ export const availableNodes = [
       title: 'Buttons',
       icon: 'fa-solid fa-circle-dot',
       getNode: () => createNode(ButtonsNode)
+    },
+    {
+      id: 'JSNode',
+      title: 'Code',
+      icon: 'fa-solid fa-code',
+      getNode: () => createNode(JavascriptNode)
     }
   ];
 
