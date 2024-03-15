@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.12.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.0",
+    "libraryName": "fhlwebpart",
+    "libraryId": "b64686f3-ecf4-4131-a264-57d86e940224",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "fhlwebpart",
+    "solutionShortDescription": "fhlwebpart description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

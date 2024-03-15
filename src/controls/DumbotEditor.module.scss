@@ -1,0 +1,21 @@
+:global .sb-modal[role=dialog] {
+    :global .sb-modal-header {
+        height: unset;
+    }
+
+    :global .sb-modal-footer {
+        height: unset;
+    }
+
+}
+
+:global .dumbot-editor-container {
+    :global .sidebarHead {
+        padding: 0;
+    }
+}
+
+:global .node_editor {
+    width: 100%;
+    max-width: 80%;
+}

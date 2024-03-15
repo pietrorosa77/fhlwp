@@ -1,0 +1,53 @@
+{
+  "name": "fhlwebpart",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=16.13.0 <17.0.0 || >=18.17.1 <19.0.0"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "gulp test"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.46.8",
+    "@microsoft/sp-component-base": "1.18.0",
+    "@microsoft/sp-core-library": "1.18.0",
+    "@microsoft/sp-lodash-subset": "1.18.0",
+    "@microsoft/sp-office-ui-fabric-core": "1.18.0",
+    "@microsoft/sp-property-pane": "1.18.0",
+    "@microsoft/sp-webpart-base": "1.18.0",
+    "dompurify": "^3.0.1",
+    "esbuild-wasm": "^0.17.19",
+    "@uiw/react-iframe":"1.0.3",
+    "html-react-parser": "^3.0.12",
+    "@types/react": "^17.0.45",
+    "@types/react-dom": "^17.0.17",
+    "tslib": "2.3.1",
+    "lz-string": "^1.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.17",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+    "@babel/preset-env": "^7.22.15",
+    "@microsoft/eslint-config-spfx": "1.18.0",
+    "@microsoft/eslint-plugin-spfx": "1.18.0",
+    "@microsoft/rush-stack-compiler-4.7": "0.1.0",
+    "@microsoft/sp-build-web": "1.18.0",
+    "@microsoft/sp-module-interfaces": "1.18.0",
+    "@rushstack/eslint-config": "2.5.1",
+    "@types/react": "17.0.45",
+    "@types/react-dom": "17.0.17",
+    "@types/webpack-env": "~1.15.2",
+    "ajv": "^6.12.5",
+    "babel-loader": "8.2.5",
+    "eslint": "8.7.0",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "gulp": "4.0.2",
+    "@types/dompurify":"3.0.5",
+    "style-loader": "^2.0.0",
+    "typescript": "4.7.4"
+  }
+}

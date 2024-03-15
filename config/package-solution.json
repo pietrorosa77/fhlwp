@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "fhlwebpart-client-side-solution",
+    "id": "b64686f3-ecf4-4131-a264-57d86e940224",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "fhlwebpart description"
+      },
+      "longDescription": {
+        "default": "fhlwebpart description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "fhlwebpart Feature",
+        "description": "The feature that activates elements of the fhlwebpart solution.",
+        "id": "a01277da-d32a-4fd9-87cf-44ba4c96eb87",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/fhlwebpart.sppkg"
+  }
+}
